@@ -1,17 +1,17 @@
 const express = require("express")
 const dotenv = require("dotenv")
+const cors = require("cors")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const routeRouter = require("./routes/route")
 
 
 const app = express();
+app.use(cors());
 dotenv.config();
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
-
-
 
 const port = process.env.PORT || 5000
 
@@ -20,12 +20,7 @@ app.get("/",(req,res)=>{
     res.send("Nodejs server is running");
 })
 
-
 app.use("/route",routeRouter)
-
-
-
-
 
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{

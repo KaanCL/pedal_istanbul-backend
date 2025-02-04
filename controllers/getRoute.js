@@ -4,7 +4,7 @@ const getRoute = async (req,res)=>{
 
     try{
        const result = await route.find();
-       res.status(201).json(result)
+       res.status(200).json(result)
     }catch(err){
         res.status(404).json({message:err.message})
     }
