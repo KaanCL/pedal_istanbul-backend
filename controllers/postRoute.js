@@ -8,8 +8,8 @@ const postRoute = async (req,res)=>{
         const{
               name,
               routeMarker,
-              startAdress,
-              endAdress,
+              startAddress,
+              endAddress,
               totalDistance,
               totalDuration,
               calorie,
@@ -21,8 +21,8 @@ const postRoute = async (req,res)=>{
         const newRoute = new route({
             name,
             routeMarker,
-            startAdress,
-            endAdress,
+            startAddress,
+            endAddress,
             totalDistance,
             totalDuration,
             calorie,
